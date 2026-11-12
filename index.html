@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio of M. Reza Pahlevi, a Software Engineer building applications and exploring machine learning and forecasting." />
+    <meta name="theme-color" content="#09090B" />
+    <meta property="og:title" content="M. Reza Pahlevi | Software Engineer" />
+    <meta property="og:description" content="Portfolio of M. Reza Pahlevi, a Software Engineer building applications and exploring machine learning and forecasting." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="./assets/icons/favicon.svg" type="image/svg+xml" />
+    <title>M. Reza Pahlevi | Software Engineer</title>
+    <script>
+      (function () {
+        const root = document.documentElement;
+        let savedTheme = null;
+
+        try {
+          savedTheme = localStorage.getItem("portfolio-theme");
+        } catch (error) {
+          savedTheme = null;
+        }
+
+        const systemTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        const initialTheme = savedTheme === "light" || savedTheme === "dark" ? savedTheme : systemTheme;
+
+        root.dataset.theme = initialTheme;
+        root.style.colorScheme = initialTheme;
+      })();
+    </script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/theme.js" defer></script>
+    <script src="./js/main.js" defer></script>
+    <script src="./js/terminal.js" defer></script>
+  </head>
+  <body>
+    <div class="cursor-glow" aria-hidden="true" data-cursor-glow></div>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="header-inner container">
+        <a class="wordmark" href="#home" aria-label="Levi, home">Levi</a>
+
+        <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" data-menu-toggle>Menu</button>
+
+        <nav class="site-nav" id="primary-navigation" aria-label="Primary navigation" data-navigation data-open="false">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#stack">Stack</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="theme-toggle" type="button" data-theme-toggle>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 15.2A8.3 8.3 0 0 1 8.8 4a8.3 8.3 0 1 0 11.2 11.2Z" />
+          </svg>
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="3.5" />
+            <path d="M12 2v2.2M12 19.8V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.2M19.8 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6" />
+          </svg>
+          <span class="sr-only" data-theme-label>Switch theme</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="hero" id="home" aria-labelledby="hero-title" data-page-section>
+        <div class="hero-grid container">
+          <div class="hero-copy">
+            <p class="hero-kicker"></p>
+            <h1 id="hero-title">
+              <span>M. Reza</span>
+              <span>Pahlevi</span>
+            </h1>
+            <div class="hero-typewriter-row">
+              <p class="hero-typewriter">
+                <span class="sr-only">I build software solutions, I work with machine learning, and I build forecasting models.</span>
+                <span class="hero-typewriter-reserve" aria-hidden="true"> I build forecasting models. </span>
+                <span class="hero-typewriter-output" data-typewriter data-complete="false" aria-hidden="true">Software Engineer.</span>
+              </p>
+              <button class="typewriter-toggle" type="button" aria-label="Pause typewriter" aria-pressed="false" data-typewriter-toggle>
+                <svg class="typewriter-icon typewriter-icon-pause" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 6v12M16 6v12" />
+                </svg>
+                <svg class="typewriter-icon typewriter-icon-play" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m9 6 9 6-9 6Z" />
+                </svg>
+                <span class="sr-only" data-typewriter-label>Pause typewriter</span>
+              </button>
+            </div>
+            <p class="hero-summary">I am a Software Engineer focused on building applications, machine learning, and forecasting.</p>
+            <div class="hero-actions" aria-label="Portfolio actions">
+              <a class="button button-primary" href="#projects">See projects</a>
+              <a class="button button-secondary" href="#contact">Contact me</a>
+            </div>
+          </div>
+
+          <section class="terminal" aria-labelledby="terminal-title">
+            <header class="terminal-header">
+              <div>
+                <h2 id="terminal-title">Command line</h2>
+                <p>Browser-only navigation</p>
+              </div>
+              <span class="terminal-scope">fixed commands</span>
+            </header>
+
+            <div class="terminal-output" id="terminal-output" role="log" aria-live="polite" aria-relevant="additions" aria-label="Terminal output" tabindex="0">
+              <p class="terminal-line">Type /help to list the available commands.</p>
+            </div>
+
+            <div class="terminal-form" id="terminal-controls" role="group" aria-labelledby="terminal-input-label">
+              <label id="terminal-input-label" for="terminal-input">Command</label>
+              <div class="terminal-control">
+                <input id="terminal-input" name="command" type="text" inputmode="text" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="48" placeholder="/help" aria-describedby="terminal-help terminal-status" disabled />
+                <button id="terminal-run" type="button" disabled>Run</button>
+              </div>
+              <p id="terminal-help">Fixed commands only: /help, /about, /projects, /stack, /contact, /theme, /clear. Controls activate when JavaScript is available.</p>
+              <p class="sr-only" id="terminal-status" aria-live="polite">Terminal controls require JavaScript.</p>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <div class="portfolio-sections">
+        <section class="content-section about-section" id="about" aria-labelledby="about-title" tabindex="-1" data-page-section>
+          <div class="container">
+            <header class="section-intro">
+              <h2 id="about-title">Engineering practical software across applications, AI, and forecasting.</h2>
+              <p>M. Reza Pahlevi is a Software Engineer interested in artificial intelligence, machine learning, and forecasting.</p>
+            </header>
+
+            <div class="about-layout">
+              <figure class="profile-figure">
+                <img class="profile-image" src="./assets/images/profile.jpg" alt="Portrait of M. Reza Pahlevi" width="1023" height="1537" loading="lazy" decoding="async" />
+              </figure>
+
+              <div class="about-details">
+                <p class="about-name">M. Reza Pahlevi</p>
+                <p class="about-copy">I'm a Software Engineer focused on building applications, exploring machine learning, and developing forecasting models.</p>
+
+                <dl class="verification-list">
+                  <div>
+                    <dt>Engineering</dt>
+                    <dd>Software engineering</dd>
+                  </div>
+                  <div>
+                    <dt>AI</dt>
+                    <dd>Machine learning projects</dd>
+                  </div>
+                  <div>
+                    <dt>Forecasting</dt>
+                    <dd>Time-series modeling</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section projects-section" id="projects" aria-labelledby="projects-title" tabindex="-1" data-page-section>
+          <div class="container">
+            <header class="section-intro section-intro-wide">
+              <p class="section-label">Projects</p>
+              <h2 id="projects-title">Selected work.</h2>
+              <p>Projects spanning web development, machine learning, and time-series forecasting.</p>
+            </header>
+
+            <div class="project-filters" role="group" aria-label="Filter projects by category" data-project-filters>
+              <button type="button" aria-pressed="true" data-project-filter="all">All</button>
+              <button type="button" aria-pressed="false" data-project-filter="web-development">Web Development</button>
+              <button type="button" aria-pressed="false" data-project-filter="machine-learning-ai">Machine Learning / AI</button>
+            </div>
+
+            <p class="filter-status" aria-live="polite" data-filter-status>Showing all projects.</p>
+
+            <div class="project-grid" data-project-grid>
+              <article class="project-card project-card-wide" data-project-card data-project-category="web-development">
+                <div class="project-card-copy">
+                  <p class="project-category">Web Development</p>
+                  <h3>
+                    <a href="https://github.com/rezpecktor/TrashGu" target="_blank" rel="noopener noreferrer" aria-label="TrashGu on GitHub, opens in a new tab">TrashGu</a>
+                  </h3>
+                  <p class="project-summary">A team-built, image-based waste classification web application with machine learning model integration.</p>
+                  <ul class="project-technologies" aria-label="TrashGu technologies">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Flask</li>
+                    <li>TensorFlow</li>
+                  </ul>
+                </div>
+
+                <div class="project-evidence">
+                  <p>Contribution</p>
+                  <p>Frontend and backend development. Machine learning integration was a collaborative team effort.</p>
+                </div>
+              </article>
+
+              <article class="project-card project-card-compact" data-project-card data-project-category="machine-learning-ai">
+                <div class="project-card-copy">
+                  <p class="project-category">Machine Learning / AI</p>
+                  <h3>
+                    <a href="https://github.com/rezpecktor/HHT-GRU-tourist-arrivals-Forecasting" target="_blank" rel="noopener noreferrer" aria-label="HHT-GRU Tourist Arrivals Forecasting on GitHub, opens in a new tab"
+                      >HHT-GRU Tourist Arrivals Forecasting</a
+                    >
+                  </h3>
+                  <p class="project-summary">A hybrid tourist arrivals forecasting project using GRU and signal decomposition.</p>
+                  <ul class="project-technologies" aria-label="HHT-GRU technologies">
+                    <li>Python</li>
+                    <li>TensorFlow</li>
+                    <li>Pandas</li>
+                    <li>scikit-learn</li>
+                  </ul>
+                </div>
+
+                <div class="project-evidence">
+                  <p>Approach</p>
+                  <p>Combines GRU with EMD-based signal decomposition and uses Google Trends as a supporting variable.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section stack-section" id="stack" aria-labelledby="stack-title" tabindex="-1" data-page-section>
+          <div class="container">
+            <header class="section-intro">
+              <p class="section-label">Stack</p>
+              <h2 id="stack-title">Technologies used across the work.</h2>
+              <p>Technologies I use or am learning. The list does not claim a proficiency level.</p>
+            </header>
+
+            <div class="stack-marquee">
+              <div class="stack-viewport" role="region" aria-label="Technology stack" tabindex="0">
+                <div class="stack-track">
+                  <ul class="stack-group">
+                    <li><span>Languages &amp; Frontend</span><strong>JavaScript</strong></li>
+                    <li><span>Languages &amp; Frontend</span><strong>Python</strong></li>
+                    <li><span>Languages &amp; Frontend</span><strong>PHP</strong></li>
+                    <li><span>Languages &amp; Frontend</span><strong>HTML</strong></li>
+                    <li><span>Languages &amp; Frontend</span><strong>CSS</strong></li>
+                    <li><span>Languages &amp; Frontend</span><strong>React.js</strong></li>
+                    <li><span>Languages &amp; Frontend</span><strong>Tailwind CSS</strong></li>
+                    <li><span>Backend &amp; Services</span><strong>Node.js</strong></li>
+                    <li><span>Backend &amp; Services</span><strong>REST API</strong></li>
+                    <li><span>Backend &amp; Services</span><strong>Supabase</strong></li>
+                    <li><span>Machine Learning &amp; Data</span><strong>TensorFlow</strong></li>
+                    <li><span>Machine Learning &amp; Data</span><strong>scikit-learn</strong></li>
+                    <li><span>Machine Learning &amp; Data</span><strong>Pandas</strong></li>
+                    <li><span>Machine Learning &amp; Data</span><strong>NumPy</strong></li>
+                    <li><span>Machine Learning &amp; Data</span><strong>Data Preprocessing</strong></li>
+                    <li><span>Tools &amp; Workflow</span><strong>Git</strong></li>
+                    <li><span>Tools &amp; Workflow</span><strong>GitHub</strong></li>
+                    <li><span>Tools &amp; Workflow</span><strong>Google Colab</strong></li>
+                    <li><span>Tools &amp; Workflow</span><strong>Jupyter</strong></li>
+                    <li><span>Tools &amp; Workflow</span><strong>Excel</strong></li>
+                    <li><span>Tools &amp; Workflow · Learning</span><strong>n8n</strong></li>
+                  </ul>
+                  <ul class="stack-group" aria-hidden="true">
+                    <li><span>Languages &amp; Frontend</span><strong>JavaScript</strong></li>
+                    <li><span>Languages &amp; Frontend</span><strong>Python</strong></li>
+                    <li><span>Languages &amp; Frontend</span><strong>PHP</strong></li>
+                    <li><span>Languages &amp; Frontend</span><strong>HTML</strong></li>
+                    <li><span>Languages &amp; Frontend</span><strong>CSS</strong></li>
+                    <li><span>Languages &amp; Frontend</span><strong>React.js</strong></li>
+                    <li><span>Languages &amp; Frontend</span><strong>Tailwind CSS</strong></li>
+                    <li><span>Backend &amp; Services</span><strong>Node.js</strong></li>
+                    <li><span>Backend &amp; Services</span><strong>REST API</strong></li>
+                    <li><span>Backend &amp; Services</span><strong>Supabase</strong></li>
+                    <li><span>Machine Learning &amp; Data</span><strong>TensorFlow</strong></li>
+                    <li><span>Machine Learning &amp; Data</span><strong>scikit-learn</strong></li>
+                    <li><span>Machine Learning &amp; Data</span><strong>Pandas</strong></li>
+                    <li><span>Machine Learning &amp; Data</span><strong>NumPy</strong></li>
+                    <li><span>Machine Learning &amp; Data</span><strong>Data Preprocessing</strong></li>
+                    <li><span>Tools &amp; Workflow</span><strong>Git</strong></li>
+                    <li><span>Tools &amp; Workflow</span><strong>GitHub</strong></li>
+                    <li><span>Tools &amp; Workflow</span><strong>Google Colab</strong></li>
+                    <li><span>Tools &amp; Workflow</span><strong>Jupyter</strong></li>
+                    <li><span>Tools &amp; Workflow</span><strong>Excel</strong></li>
+                    <li><span>Tools &amp; Workflow · Learning</span><strong>n8n</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section contact-section" id="contact" aria-labelledby="contact-title" tabindex="-1" data-page-section>
+          <div class="container">
+            <div class="contact-panel">
+              <p class="section-label"></p>
+              <h2 id="contact-title">Let's work together.</h2>
+              <p class="contact-copy">Explore my code and current projects on GitHub.</p>
+
+              <nav class="contact-actions" aria-label="Social profile">
+                <a class="button button-primary contact-primary" href="https://github.com/rezpecktor" target="_blank" rel="noopener noreferrer" aria-label="View rezpecktor on GitHub, opens in a new tab">
+                  <span>View GitHub profile</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </nav>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

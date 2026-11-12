@@ -1,0 +1,35 @@
+# Operating system
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+# Private profile assets
+assets/images/
